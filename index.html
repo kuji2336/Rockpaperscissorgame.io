@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script  src="https://kit.fontawesome.com/95917dde75.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./images/css/game.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/robot.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+  <title>Play with Neo| Rock, Paper, Scissors</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: hsl(237, 49%, 15%);">
+
+<!---- game rules modal-->
+<div id="myrulesModal" class="modal">
+
+  <div class="modal-contentgamerules">
+    <span  id="close">&times;</span>
+    <h1 style="text-align: center;">Game rules</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="304" height="270"><defs><linearGradient id="j" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFF" stop-opacity=".097"/><stop offset="100%" stop-color="#FFF" stop-opacity="0"/></linearGradient><linearGradient id="w" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFF" stop-opacity=".097"/><stop offset="100%" stop-color="#FFF" stop-opacity="0"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><ellipse cx="53.189" cy="54.815" fill="#B1B4C5" rx="53.189" ry="54.815"/><ellipse cx="53.189" cy="52.385" fill="url(#a)" rx="53.189" ry="52.385"/><g transform="translate(12.357 12.421)"><ellipse cx="40.832" cy="41.044" fill="#E1E4ED" rx="40.832" ry="41.044"/><path fill="#8A90AC" fill-rule="nonzero" d="M56.697 30.417a2.125 2.125 0 00-.904-.146c-.417.03-.755.201-.955.481-1.177 1.666-2.141 4.81-2.919 7.337-.357 1.169-.836 2.733-1.183 3.475-.362-2.08.047-9.697.206-12.63l.002-.047c.11-2.038.125-2.396.1-2.553-.174-1.118-.618-1.852-1.319-2.18-.708-.333-1.629-.186-2.62.417-.497.303-.635 1.345-1.061 6.067l-.002.02c-.235 2.595-.776 8.568-1.441 9.563-.75-1.392-1.784-9.3-2.23-12.722-.312-2.397-.494-3.774-.616-4.19-.257-.87-1.343-1.611-2.418-1.653-.895-.044-1.629.415-1.98 1.214-.655.736-.423 3.179.302 8.964.344 2.754 1.056 8.441.608 9.08-.893-.099-2.427-3.661-4.559-10.592-.598-1.942-.783-2.525-.967-2.78-.362-.891-1.593-1.578-2.696-1.5a2.314 2.314 0 00-.277.036c-.578.116-1.896.653-1.615 3.13.779 3.435 1.624 5.957 2.445 8.405l.016.05c.491 1.465.955 2.85 1.387 4.388 1.016 3.63.621 5.882.616 5.907-.034.232-.105.374-.211.423a.405.405 0 01-.143.033c-.322.023-.805-.193-1.055-.333-.568-1.098-3.4-6.33-5.967-7.055L25.15 41l-.093.008c-.942.09-1.634.45-2.057 1.068-.67.978-.393 2.224-.325 2.474l.038.09c.02.037 2.079 3.825 2.397 5.587.275 1.511 1.696 3.148 2.838 4.464l.047.054c.373.43.695.802.948 1.146 3.316 3.492 8.558 6.428 8.601 6.452.654.487 1.018.958 1.056 1.363a.595.595 0 01-.117.43l-.114.12.725.711 13.832-.98.59-2.73c1.823-7.705 1.442-14.275 1.436-14.319.007-.242.518-2.58.93-4.468l.011-.048c.82-3.763 1.838-8.444 2.034-10.225.085-.761-.398-1.46-1.23-1.779z"/></g><g transform="translate(196)"><ellipse cx="53.686" cy="54.815" fill="#B1B4C5" rx="53.686" ry="54.815"/><ellipse cx="53.686" cy="52.385" fill="url(#b)" rx="53.686" ry="52.385"/><g transform="translate(12.473 12.421)"><ellipse cx="41.214" cy="41.044" fill="#E1E4ED" rx="41.214" ry="41.044"/><path fill="#8A90AC" fill-rule="nonzero" d="M30.455 40.692l4.451-6.234c-1.85-.307-5.248-.375-8.031 2.397-4.388 4.37-6.165 13.809-6.535 16.093l11.15 11.105c2.008-.17 10.896-1.353 19.46-9.881.09-.184 2.177-1.72.471-3.418-.814-.81-2.162-.796-2.993.033a1.051 1.051 0 01-1.497.015 1.04 1.04 0 01.015-1.49l3.026-3.014c1.538-1.532.089-4.116-2.058-3.495l-2.477 2.112a1.065 1.065 0 01-1.497-.103c-.384-.443-.302-1.114.135-1.492 8.654-7.562 7.39-6.65 12.958-11.848 2.08-1.725-.536-4.776-2.586-3.03L40.978 40.506a1.051 1.051 0 01-1.378-.015c-.445-.383-.455-.934-.164-1.37l9.395-14.545c1.373-1.852-1.33-3.91-2.776-2.042L32.164 41.881a1.05 1.05 0 01-1.47.255 1.02 1.02 0 01-.24-1.444z"/></g></g><g transform="translate(98 160)"><ellipse cx="53.686" cy="54.815" fill="#B1B4C5" rx="53.686" ry="54.815"/><ellipse cx="53.686" cy="52.385" fill="url(#b)" rx="53.686" ry="52.385"/><g transform="translate(12.473 12.421)"><ellipse cx="41.214" cy="41.044" fill="#E1E4ED" rx="41.214" ry="41.044"/><path fill="#8A90AC" fill-rule="nonzero" d="M57.179 35.15c-.475-5.997-7.208-5.385-7.208-5.385-2.842-5.01-7.281-1.381-7.281-1.381-3.41-4.911-7.687-.36-7.687-.36-7.373-.796-7.087 5.234-7.087 5.234-.173 1.917 1.04 7.847 1.04 7.847-1.094-3.418-3.467-.581-3.467-.581-2.917 4.502-.721 6.967-.721 6.967 3.947 4.626 12.357 10.18 12.357 10.18 3.046 1.745 1.757 3.3 1.757 3.3l18.42-3.044.424-3.494c2.8-8.472-.547-19.284-.547-19.284z"/></g></g><text fill="#B1B4C5" font-family="BarlowSemiCondensed-Bold, Barlow Semi Condensed" font-size="13" font-style="condensed" font-weight="bold"><tspan x="134" y="31">BEATS</tspan></text><text fill="#B1B4C5" font-family="BarlowSemiCondensed-Bold, Barlow Semi Condensed" font-size="13" font-style="condensed" font-weight="bold"><tspan x="40" y="147">BEATS</tspan></text><text fill="#B1B4C5" font-family="BarlowSemiCondensed-Bold, Barlow Semi Condensed" font-size="13" font-style="condensed" font-weight="bold"><tspan x="235" y="147">BEATS</tspan></text><g fill="#B1B4C5" transform="matrix(-1 0 0 1 177 39)"><rect width="50" height="4" y="10" rx="2"/><path d="M41.963 2.015l8.59 8.728c.716.727.71 1.896-.013 2.616a1.833 1.833 0 01-2.6-.013l-8.59-8.728a1.855 1.855 0 01.013-2.616 1.833 1.833 0 012.6.013z"/><path d="M39.35 19.382l8.59-8.728a1.833 1.833 0 012.6-.013c.723.72.729 1.889.013 2.616l-8.59 8.728a1.833 1.833 0 01-2.6.013 1.855 1.855 0 01-.013-2.616z"/></g><g fill="#B1B4C5" transform="scale(1 -1) rotate(-55 -82.574 -131.195)"><rect width="50" height="4" y="10" rx="2"/><path d="M41.963 2.015l8.59 8.728c.716.727.71 1.896-.013 2.616a1.833 1.833 0 01-2.6-.013l-8.59-8.728a1.855 1.855 0 01.013-2.616 1.833 1.833 0 012.6.013z"/><path d="M39.35 19.382l8.59-8.728a1.833 1.833 0 012.6-.013c.723.72.729 1.889.013 2.616l-8.59 8.728a1.833 1.833 0 01-2.6.013 1.855 1.855 0 01-.013-2.616z"/></g><g fill="#B1B4C5" transform="rotate(-55 240.022 -103.651)"><rect width="50" height="4" y="10" rx="2"/><path d="M41.963 2.015l8.59 8.728c.716.727.71 1.896-.013 2.616a1.833 1.833 0 01-2.6-.013l-8.59-8.728a1.855 1.855 0 01.013-2.616 1.833 1.833 0 012.6.013z"/><path d="M39.35 19.382l8.59-8.728a1.833 1.833 0 012.6-.013c.723.72.729 1.889.013 2.616l-8.59 8.728a1.833 1.833 0 01-2.6.013 1.855 1.855 0 01-.013-2.616z"/></g></g></svg>
+  </div>
+</div>
+<!---- game setings modal-->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1 style="text-align: center; padding: 10px;">Change game settings</h1>
+      <form action="#" id="form">
+        <label for="numbers" style="color: black; font-size: larger;">Game up to:</label>
+        <select id="list" >
+          <option value="7">7</option>
+          <option value="12">12</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="topnav" id="myTopnav" >
+    <img src="./images/robot.png" height="80px" width="80px" style="float: left; padding: 15px; ">
+    <!----logo-->
+    <div class="meny">
+    <a href="#rules" class="middle" id="myRules">Rules</a>
+    <a href="#about game" class="middle" id="myBtn">settings</a>
+    <a href="#contact" class="middle">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+  </div>
+  <div id="gridsys" style="margin-top: 10%;" style="overflow-x: hidden; overflow-y: hidden;">
+    <div class="sys1" style="margin-top: 20%;">
+      <div id="svgg">
+        <div class="finalresult" id="finalresult1">
+          <h1 style="color:green;" id="winorlose">YOU WIN!<h1>
+          <h2 id="restart" style="cursor: pointer;" >restart game<i class="fas fa-redo" style="margin-left: 20px;"></i></h2>
+          </div>
+          <div id="triangle" style="margin-top: 10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -150 600 900" >
+        <symbol id="a"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs><path d="M338.19 285.44C307.96 285.44 283.42 260.36 283.42 229.48C283.42 198.6 307.96 173.53 338.19 173.53C368.41 173.53 392.95 198.6 392.95 229.48C392.95 260.36 368.41 285.44 338.19 285.44Z" id="e3WJRUBaJc"></path><path d="M338.19 285.44C307.96 285.44 283.42 260.36 283.42 229.48C283.42 198.6 307.96 173.53 338.19 173.53C368.41 173.53 392.95 198.6 392.95 229.48C392.95 260.36 368.41 285.44 338.19 285.44Z" id="c47GhddYg4"></path><path d="M0 0.18C0 0.18 0 0.18 0 0.19C0 0.19 0 0.19 0 0.2C0 0.2 0 0.2 0 0.2C0 0.2 0 0.2 0 0.2C0 0.22 0 0.24 0 0.24C0 0.25 0 0.25 0 0.25C0 0.24 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C6.28 1.74 21.99 5.62 47.13 11.83C18.85 4.84 3.14 0.95 0 0.18Z" id="d93MHxK9Yp"></path><path d="M0 0.18C0 0.18 0 0.18 0 0.19C0 0.19 0 0.19 0 0.2C0 0.2 0 0.2 0 0.2C0 0.2 0 0.2 0 0.2C0 0.22 0 0.24 0 0.24C0 0.25 0 0.25 0 0.25C0 0.24 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C6.28 1.74 21.99 5.62 47.13 11.83C18.85 4.84 3.14 0.95 0 0.18Z" id="b2wf5NNY0u"></path><path d="M499.4 250.67C493.83 241.72 486.84 250.02 486.84 250.02C474.79 248.57 475.26 259.56 475.26 259.56C474.97 263.05 476.96 273.86 476.96 273.86C475.17 267.63 471.29 272.8 471.29 272.8C466.52 281.01 470.11 285.5 470.11 285.5C476.56 293.93 490.31 304.05 490.31 304.05C495.28 307.23 493.18 310.07 493.18 310.07C495.18 309.7 505.22 307.85 523.28 304.52C523.69 300.7 523.92 298.58 523.97 298.15C528.55 282.71 523.07 263 523.07 263C522.3 252.07 513.65 255.15 511.3 253.19C506.65 244.06 501.78 251.17 499.4 250.67Z" id="awZMABkGE"></path><path d="M891.71 197.81C891.71 197.81 891.71 197.81 891.71 197.81C891.71 439.01 891.71 573.01 891.71 599.81C891.71 599.81 891.71 599.81 891.71 599.81C542.51 599.81 348.51 599.81 309.71 599.81C309.71 599.81 309.71 599.81 309.71 599.81C309.71 358.61 309.71 224.61 309.71 197.81C309.71 197.81 309.71 197.81 309.71 197.81C658.91 197.81 852.91 197.81 891.71 197.81Z" id="b1i2NGSZyx"></path><path d="M355.01 209.44C354.44 209.48 353.98 209.71 353.71 210.09C352.11 212.34 350.79 216.59 349.73 220C349.25 221.58 348.59 223.69 348.12 224.69C347.63 221.88 348.18 211.6 348.4 207.64C348.4 207.63 348.4 207.58 348.4 207.57C348.55 204.82 348.57 204.34 348.54 204.13C348.3 202.62 347.7 201.63 346.74 201.19C345.78 200.74 344.52 200.94 343.17 201.75C342.49 202.16 342.31 203.56 341.72 209.94C341.72 209.94 341.72 209.96 341.72 209.97C341.4 213.47 340.66 221.53 339.76 222.88C338.73 221 337.33 210.32 336.72 205.7C336.29 202.46 336.05 200.61 335.88 200.05C335.53 198.87 334.05 197.87 332.58 197.81C331.36 197.75 330.36 198.37 329.89 199.45C328.99 200.45 329.31 203.74 330.3 211.55C330.77 215.27 331.74 222.95 331.13 223.81C329.91 223.68 327.82 218.87 324.91 209.51C324.09 206.89 323.84 206.1 323.59 205.76C323.1 204.56 321.42 203.63 319.92 203.73C319.79 203.74 319.66 203.76 319.54 203.78C318.75 203.94 316.96 204.66 317.34 208.01C318.4 212.65 319.55 216.05 320.67 219.36C320.67 219.36 320.69 219.41 320.69 219.42C321.36 221.4 322 223.27 322.58 225.35C323.97 230.25 323.43 233.29 323.42 233.32C323.38 233.63 323.28 233.82 323.14 233.89C323.07 233.92 323.01 233.93 322.94 233.94C322.5 233.97 321.84 233.68 321.5 233.49C320.73 232 316.87 224.94 313.37 223.96C313.36 223.96 313.32 223.95 313.24 223.93C313.17 223.93 313.13 223.94 313.12 223.94C311.83 224.06 310.89 224.54 310.31 225.38C309.4 226.7 309.78 228.38 309.87 228.72C309.87 228.73 309.92 228.83 309.92 228.84C309.95 228.89 312.76 234 313.19 236.38C313.56 238.42 315.5 240.63 317.06 242.41C317.06 242.42 317.12 242.47 317.12 242.48C317.63 243.06 318.07 243.56 318.41 244.03C322.93 248.74 330.08 252.71 330.14 252.74C331.03 253.4 331.52 254.03 331.58 254.58C331.6 254.79 331.54 254.99 331.42 255.16C331.41 255.17 331.36 255.22 331.26 255.32L332.25 256.28L351.1 254.96C351.59 252.75 351.85 251.52 351.91 251.27C354.39 240.87 353.87 232 353.87 231.94C353.88 231.62 354.57 228.46 355.13 225.91C355.13 225.9 355.15 225.85 355.15 225.85C356.27 220.77 357.65 214.45 357.92 212.04C358.04 211.01 357.38 210.07 356.25 209.64C355.85 209.49 355.43 209.42 355.01 209.44Z" id="acUoPs8lX"></path></defs><g><g><g><use xlink:href="#e3WJRUBaJc" opacity="1" fill="#f6efef" fill-opacity="1"></use><g><use xlink:href="#e3WJRUBaJc" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#c47GhddYg4" opacity="1" fill="#000000" fill-opacity="0"></use><g><use xlink:href="#c47GhddYg4" opacity="1" fill-opacity="0" stroke="#3f24d2" stroke-width="18" stroke-opacity="1"></use></g></g><g><use xlink:href="#d93MHxK9Yp" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#d93MHxK9Yp" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#b2wf5NNY0u" opacity="1" fill="#000000" fill-opacity="0"></use><g><use xlink:href="#b2wf5NNY0u" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#awZMABkGE" opacity="1" fill="#000000" fill-opacity="0"></use><g><use xlink:href="#awZMABkGE" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#b1i2NGSZyx" opacity="1" fill="#000000" fill-opacity="0"></use><g><use xlink:href="#b1i2NGSZyx" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#acUoPs8lX" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#acUoPs8lX" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g></g></g></symbol>
+    <symbol id="b"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs><path d="M392.95 229.48C392.95 260.36 368.41 285.44 338.19 285.44C307.96 285.44 283.42 260.36 283.42 229.48C283.42 198.6 307.96 173.53 338.19 173.53C368.41 173.53 392.95 198.6 392.95 229.48Z" id="a5S9WKUGw6"></path><path d="M47.13 11.83C18.85 4.84 3.14 0.95 0 0.18C0 0.18 0 0.18 0 0.19C0 0.19 0 0.19 0 0.2C0 0.2 0 0.2 0 0.2C0 0.2 0 0.2 0 0.2C0 0.22 0 0.24 0 0.24C0 0.25 0 0.25 0 0.25C0 0.24 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C6.28 1.74 21.99 5.62 47.13 11.83Z" id="gWcIIOOKD"></path><path d="M324.09 223.4C328.46 217.19 330.89 213.74 331.37 213.05C328.35 212.54 322.79 212.43 318.23 217.03C311.05 224.28 308.14 239.95 307.54 243.74C309.36 245.58 323.96 260.33 325.78 262.17C329.07 261.89 343.61 259.93 357.63 245.77C357.78 245.46 361.19 242.92 358.4 240.1C357.07 238.75 354.86 238.78 353.5 240.15C352.81 240.85 351.73 240.86 351.05 240.18C350.38 239.49 350.38 238.4 351.08 237.7C351.57 237.2 355.54 233.2 356.03 232.7C358.55 230.16 356.17 225.87 352.66 226.9C352.26 227.25 349.01 230.05 348.61 230.41C347.87 231.06 346.77 230.95 346.16 230.23C345.53 229.5 345.66 228.39 346.38 227.76C360.54 215.21 358.47 216.72 367.59 208.09C370.99 205.23 366.71 200.16 363.35 203.06C361.15 205.06 343.51 221.08 341.31 223.09C340.67 223.64 339.69 223.65 339.06 223.06C338.33 222.43 338.31 221.51 338.79 220.79C340.33 218.37 352.62 199.06 354.16 196.64C356.41 193.57 351.99 190.15 349.62 193.25C347.35 196.46 329.16 222.16 326.89 225.37C326.34 226.17 325.23 226.35 324.48 225.79" id="e2Rv8xjWJw"></path></defs><g><g><g><use xlink:href="#a5S9WKUGw6" opacity="1" fill="#f6efef" fill-opacity="1"></use><g><use xlink:href="#a5S9WKUGw6" opacity="1" fill-opacity="0" stroke="#d2a924" stroke-width="18" stroke-opacity="1"></use></g></g><g><use xlink:href="#gWcIIOOKD" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#gWcIIOOKD" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#e2Rv8xjWJw" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#e2Rv8xjWJw" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g></g></g></symbol>
+        <symbol id="c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs ><path d="M392.95 229.48C392.95 260.36 368.41 285.44 338.19 285.44C307.96 285.44 283.42 260.36 283.42 229.48C283.42 198.6 307.96 173.53 338.19 173.53C368.41 173.53 392.95 198.6 392.95 229.48Z" id="h4H9izsDw1"></path><path d="M47.13 11.83C18.85 4.84 3.14 0.95 0 0.18C0 0.18 0 0.18 0 0.19C0 0.19 0 0.19 0 0.2C0 0.2 0 0.2 0 0.2C0 0.2 0 0.2 0 0.2C0 0.22 0 0.24 0 0.24C0 0.25 0 0.25 0 0.25C0 0.24 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C0 0.19 0 0.19 0 0.19C6.28 1.74 21.99 5.62 47.13 11.83Z" id="gWcIIOOKD"></path><path d="M350.77 205.68C345.5 197.02 337.26 203.29 337.26 203.29C330.94 194.81 323.01 202.67 323.01 202.67C309.33 201.3 309.86 211.72 309.86 211.72C309.54 215.03 311.79 225.28 311.79 225.28C309.76 219.37 305.36 224.27 305.36 224.27C299.95 232.06 304.02 236.31 304.02 236.31C311.34 244.31 326.94 253.91 326.94 253.91C332.59 256.92 330.2 259.61 330.2 259.61C332.48 259.26 343.87 257.51 364.37 254.35C364.84 250.73 365.1 248.71 365.15 248.31C370.35 233.67 364.14 214.99 364.14 214.99C363.26 204.62 353.44 207.54 350.77 205.68Z" id="dns1oZPgd"></path></defs><g><g><g><use xlink:href="#h4H9izsDw1" opacity="1" fill="#f6efef" fill-opacity="1"></use><g><use xlink:href="#h4H9izsDw1" opacity="1" fill-opacity="0" stroke="#fc1515" stroke-width="18" stroke-opacity="1"></use></g></g><g><use xlink:href="#gWcIIOOKD" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#gWcIIOOKD" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#dns1oZPgd" opacity="1" fill="#3b4262" fill-opacity="1"></use><g><use xlink:href="#dns1oZPgd" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g></g></g></symbol>
+          <path id="t" fill="none" stroke="#000" stroke-width="15" d="M291.5 7.5H4.574L147.892 254L291.5 7.5z" opacity=".2"/>
+          <use xlink:href="#a" id="paper" width="400"  height="400" x="-200" y="-150"/>
+          <use xlink:href="#b" id="scissor" width="400" height="400" x="84" y="-147"/>
+          <use xlink:href="#c" id="rock" width="400" height="400" x="-60" y="90"/>
+        </svg>
+      </div>
+      </div>
+    </div>
+    <div class="sys2">
+      <div class="Triangle" style="margin-top: 20%;">
+        <div id="game" style="margin-top: 40px;">
+          <div class="score-board">
+            <p style="font-size: 1em; color: blanchedalmond;">Score-board</p>
+            <div class="player">
+              <h4 style="color: violet;">YOUR SCORE</h4>
+              <div class="score-box" id="firstplayer">
+                0
+              </div>
+            </div>
+            <div class="player">
+              <h4 style="color: tomato;">NEO'S SCORE</h4>
+              <div class="score-box" id="secondplayer">
+                0
+              </div>
+            </div>
+          </div>
+          <div class="flex-container" >
+            <div>
+              <h4>YOUR CHOICE: <i class="fas fa-user" style="margin-bottom: 3px; margin-left: 3px; padding: 9px;"></i></h4>
+            <div id="playerChose">
+            </div>
+            </div>
+            <div>
+              <h4>RESULT</h4>
+            <div id="result">
+              
+            </div>
+          </div>
+            <div>
+              <h4>NEO'S CHOICE:<i class="fas fa-robot" style="margin-bottom: 3px; margin-left: 7px; padding: 9px;"></i></h4>
+            <div id="compiuterChoise">
+            </div>  
+          </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+    </div>
+    <!-----footer-->
+    <footer class="footer-distributed">
+			<div class="footer-right">
+				<a href="https://www.facebook.com/profile.php?id=100008263353377&ref=bookmarks"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="https://github.com/kuji2336"><i class="fa fa-github"></i></a>
+			</div>
+			<div class="footer-left">
+				<p class="footer-links">
+					<a href="#">Home</a>
+					<a href="#">Blog</a>
+					<a href="#">About</a>
+					<a href="#">FAQ</a>
+					<a href="#">Contact</a>
+        </p>
+				<p>Developed by  &copy; Kuji bolkvadze</p>
+			</div>
+    </footer>
+  <script src="./design/gamejs/game.js"></script>
+</body>
+</html>
